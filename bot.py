@@ -159,8 +159,8 @@ async def cb_age(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "Since you're already here… might as well take a peek. 🤫"
         )
 
-    # Edit the original message — removes the buttons cleanly
-    await query.message.edit_text(confirm_text, parse_mode="HTML")
+    # Edit the original message caption — removes the buttons cleanly
+    await query.message.edit_caption(caption=confirm_text, parse_mode="HTML")
 
     # Send the channel link as a follow-up (auto-deletes in 30 min)
     link_msg = await query.message.reply_text(
