@@ -109,6 +109,8 @@ def schedule_delete(context: ContextTypes.DEFAULT_TYPE, chat_id, message_id, sec
     )
 
 
+VIDEO_URL = "https://tndsmapjwfqpofsoapmq.supabase.co/storage/v1/object/public/Lonkesh/5_6109245195037973458.mp4"
+
 # ─────────────────────────────────────────────────────────────────────────────
 # /start — Age verification
 # ─────────────────────────────────────────────────────────────────────────────
@@ -123,9 +125,12 @@ async def cmd_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ]
     ])
 
-    await update.message.reply_text(
-        f"👋 <b>Welcome, {user.first_name}!</b>\n\n"
-        "Please confirm your age before continuing 👇",
+    await update.message.reply_video(
+        video=VIDEO_URL,
+        caption=(
+            f"👋 <b>Welcome, {user.first_name}!</b>\n\n"
+            "Please confirm your age before continuing 👇"
+        ),
         parse_mode="HTML",
         reply_markup=kb,
     )
@@ -159,7 +164,7 @@ async def cb_age(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # Send the channel link as a follow-up (auto-deletes in 30 min)
     link_msg = await query.message.reply_text(
-        f"🔗 <b>Here's your link:</b>\n\n"
+        f"🔗 <b>800+ Desi Leaks video channel ⬇️:</b>\n\n"
         f"👉 {CHANNEL_LINK}\n\n"
         "⏳ <i>This message disappears in <b>30 minutes</b>. Don't miss it!</i>",
         parse_mode="HTML",
